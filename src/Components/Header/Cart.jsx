@@ -1,5 +1,8 @@
+import { useContext } from "react";
+import { CartContext } from "../../Context";
 
 const Cart = () => {
+    const{cartCount} = useContext(CartContext);
     return (
         <div
             
@@ -19,7 +22,7 @@ const Cart = () => {
             >Cart</span>
             <span
                 className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-rose-500 text-white text-xs font-bold flex items-center justify-center shadow"
-            >3</span>
+            >{cartCount}</span>
         </div>
     );
 };

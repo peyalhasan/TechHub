@@ -1,8 +1,10 @@
+import { useContext } from 'react';
 import getFormattedDate from '../../Utils/dateFormate'
-const ProductCard = ({product}) => {
+import { CartContext } from '../../Context';
+const ProductCard = ({ product }) => {
 
-    const {title, price, description, image, stock, rating_rate, updatedAt, rating_count } = product;
-
+    const { title, price, description, image, stock, rating_rate, updatedAt, rating_count } = product;
+    const { addToCart } = useContext(CartContext)
     const base_url = "http://localhost:9000/"
 
 
@@ -44,6 +46,7 @@ const ProductCard = ({product}) => {
                 </div>
                 <button
                     className="w-full button-primary py-2.5 rounded-lg font-semibold"
+                    onClick={()=>addToCart(product)}
                 >
                     Add to Cart
                 </button>
