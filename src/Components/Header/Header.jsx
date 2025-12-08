@@ -1,9 +1,15 @@
+import { useContext } from "react";
 import Cart from "./Cart";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
 import Search from "./Search";
+import { TogglePageContext } from "../../Context";
 
 const Header = () => {
+    const {setPage} = useContext(TogglePageContext);
+    function handlePageChange(){
+       setPage('Cart')
+    }
     return (
         <nav
             className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200"
@@ -21,7 +27,9 @@ const Header = () => {
                     {/* Search */}
                     <Search />
                     {/* Cart */}
-                    <Cart />
+                   { <button type="button" onClick={handlePageChange}>
+                        <Cart />
+                    </button>}
                 </div>
             </div>
         </nav>

@@ -3,7 +3,7 @@ const ProductCard = ({product}) => {
 
     const {title, price, description, image, stock, rating_rate, updatedAt, rating_count } = product;
 
-    console.log(image)
+    const base_url = "http://localhost:9000/"
 
 
     return (
@@ -12,7 +12,7 @@ const ProductCard = ({product}) => {
             <div
                 className="aspect-square bg-gradient-to-br from-slate-100 via-white to-rose-50 flex items-center justify-center">
                 <img
-                    src={image}
+                    src={`${base_url}${image}`}
                     alt={title}
                     className="w-full h-full object-cover" />
             </div>
