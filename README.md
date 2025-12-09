@@ -90,7 +90,7 @@ npm run dev
 ## 📸 Screenshots
 
 ### Component Tree
-![al](./TechBoard.png)
+![Component Tree](./Components%20Tree.png)
 
 ### Products Board
 ![Products Board](./TechBoard.png)
