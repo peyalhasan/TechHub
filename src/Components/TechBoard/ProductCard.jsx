@@ -3,8 +3,15 @@ import getFormattedDate from '../../Utils/dateFormate'
 import { CartContext } from '../../Context';
 const ProductCard = ({ product }) => {
 
-    const { title, price, description, image, stock, rating_rate, updatedAt, rating_count } = product;
-    const { addToCart } = useContext(CartContext)
+    const { title, price, description, image, stock, rating_rate, updatedAt, rating_count, id } = product;
+    const { cart, addToCart } = useContext(CartContext)
+
+
+    const cartItem = cart.find(item => item.id === id);
+    const usedStock = cartItem ? cartItem.quantity : 0;
+
+    const remainingStock = stock - usedStock;
+
     const base_url = "http://localhost:9000/"
 
 
@@ -42,11 +49,23 @@ const ProductCard = ({ product }) => {
                         className="text-2xl font-bold text-slate-900">${price}</span>
                     <span
                         className="text-sm text-emerald-600 font-medium"
-                    >In Stock ({stock})</span>
+                    >{remainingStock > 0 ? (
+                        <span className="text-green-600 font-bold">
+                            In Stock ({remainingStock} left)
+                        </span>
+                    ) : (
+                        <span className="text-red-600 font-bold">
+                            Out of Stock
+                        </span>
+                    )}</span>
                 </div>
                 <button
-                    className="w-full button-primary py-2.5 rounded-lg font-semibold"
-                    onClick={()=>addToCart(product)}
+                    className={`mt-4 w-full py-3 rounded-lg font-bold transition ${remainingStock > 0
+                            ? 'bg-rose-500 text-white hover:bg-rose-600'
+                            : 'bg-gray-400 text-gray-700 cursor-not-allowed'
+                        }`}
+                    disabled={remainingStock <= 0}
+                    onClick={() => addToCart(product)}
                 >
                     Add to Cart
                 </button>
