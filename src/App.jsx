@@ -1,16 +1,18 @@
 
 import Page from '../Page'
 import './App.css'
-import { CartProvider,  TogglePageProvider } from './Provider'
+import { CartProvider, ProductProvider, TogglePageProvider } from './Provider'
 
 function App() {
 
   return (
+    <ProductProvider>
       <CartProvider>
         <TogglePageProvider>
           <Page />
         </TogglePageProvider>
       </CartProvider>
+    </ProductProvider>
   )
 }
 

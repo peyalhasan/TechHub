@@ -4,15 +4,13 @@ import Header from "./src/Components/Header/Header";
 import TechBoard from "./src/Components/TechBoard/TechBoard";
 import { TogglePageContext } from "./src/Context";
 import CartBoard from "./src/Components/Header/CartsBoard";
-import { useProducts } from "./src/Components/Hooks";
 
 const Page = () => {
     const { page } = useContext(TogglePageContext)
-    const { setSearchTerm } = useProducts()
 
     return (
         <div>
-            <Header setSearchTerm={setSearchTerm} />
+            <Header  />
             {page === 'Home' && <TechBoard />}
             {page === 'Cart' && <CartBoard />}
 

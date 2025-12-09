@@ -1,11 +1,11 @@
 import Filterbar from "./Filterbar";
 import ProductBoard from "./ProductBoard";
 import Sort from "./Sort";
-import { useProducts } from "../Hooks";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ProductContext } from "../../Context";
 
 const Dashboard = () => {
-    const { products, loading, filter, setFilter} = useProducts();
+    const { products, loading, filter, setFilter} = useContext(ProductContext)
 
     const [sortBy, setSortBy] = useState('newest');
 

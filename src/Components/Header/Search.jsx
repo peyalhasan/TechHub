@@ -1,7 +1,9 @@
+import { useContext } from "react";
+import { ProductContext } from "../../Context";
 
-const Search = ({ setSearchTerm }) => {
+const Search = () => {
 
-
+    const {setSearchTerm} = useContext(ProductContext)
     const handleChange = (e) => {
         setSearchTerm(e.target.value)
     }

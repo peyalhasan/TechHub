@@ -39,18 +39,20 @@ export default function useProducts() {
             const res = await fetch(url);
             if (!res.ok) throw new Error(`Error: ${res.status}`);
             const data = await res.json();
-
             setProducts(data.data || []);
         } catch (err) {
             setError(err.message);
         } finally {
             setLoading({ state: false, message: "" });
         }
+
     }, [filter, searchTerm]);
 
     useEffect(() => {
         fetchProducts(); // runs on mount + filter/searchTerm change
     }, [fetchProducts]);
+
+
 
     return { products, loading, error, filter, setFilter, searchTerm, setSearchTerm };
 }

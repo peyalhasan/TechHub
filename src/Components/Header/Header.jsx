@@ -5,7 +5,7 @@ import Navigation from "./Navigation";
 import Search from "./Search";
 import { TogglePageContext } from "../../Context";
 
-const Header = ({setSearchTerm}) => {
+const Header = () => {
     const { setPage } = useContext(TogglePageContext);
     function handlePageChange() {
         setPage('Cart')
@@ -25,7 +25,7 @@ const Header = ({setSearchTerm}) => {
                 <Navigation />
                 <div className="flex items-center gap-3">
                     {/* Search */}
-                    <Search  setSearchTerm={setSearchTerm}/>
+                    <Search  />
                     {/* Cart */}
                     {<button type="button" onClick={handlePageChange}>
                         <Cart />

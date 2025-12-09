@@ -1,6 +1,7 @@
 import { createContext } from "react";
 
 const TogglePageContext = createContext('');
+const ProductContext = createContext();
 const CartContext = createContext();
 
-export {TogglePageContext, CartContext}
+export {TogglePageContext,ProductContext, CartContext}
