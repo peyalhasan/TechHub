@@ -99,7 +99,7 @@ const CartBoard = () => {
                         +
                       </button>
                     </div>
-                    <span className="text-2xl font-bold text-slate-900">$6,999</span>
+                    <span className="text-2xl font-bold text-slate-900">${item.price}</span>
                   </div>
                 </div>
               </div>
@@ -115,7 +115,7 @@ const CartBoard = () => {
             <div className="space-y-3 border-slate-200">
               <div className="flex justify-between text-slate-600">
                 <span>Subtotal</span>
-                <span>$15,396</span>
+                <span>${cartTotal}</span>
               </div>
               <div className="flex justify-between text-slate-600">
                 <span>Shipping</span>
