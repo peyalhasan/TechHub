@@ -5,7 +5,7 @@ import { useProducts } from "../Hooks";
 import { useState } from "react";
 
 const Dashboard = () => {
-    const { products, loading, filter, setFilter } = useProducts();
+    const { products, loading, filter, setFilter} = useProducts();
 
     const [sortBy, setSortBy] = useState('newest');
 

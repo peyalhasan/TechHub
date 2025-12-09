@@ -1,4 +1,5 @@
 
 import useProducts from "./useProducts";
+import useCatrogries from "./useCategory";
 
-export {useProducts};
+export {useProducts, useCatrogries};

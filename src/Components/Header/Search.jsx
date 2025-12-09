@@ -1,5 +1,10 @@
 
-const Search = () => {
+const Search = ({ setSearchTerm }) => {
+
+
+    const handleChange = (e) => {
+        setSearchTerm(e.target.value)
+    }
     return (
         <div className="hidden sm:block">
             <div
@@ -25,6 +30,7 @@ const Search = () => {
                     type="text"
                     placeholder="Search laptops, GPUs, desktops..."
                     className="bg-transparent text-sm placeholder:text-slate-400 focus:outline-none w-64"
+                    onChange={handleChange}
                 />
             </div>
         </div>

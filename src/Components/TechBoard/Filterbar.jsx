@@ -1,5 +1,5 @@
+import { useCatrogries } from "../Hooks";
 
-import useCatrogries from "../Hooks/useCategory";
 
 const Filterbar = ({ filter, setFilter }) => {
     const { categories, error, loading } = useCatrogries();
