@@ -71,7 +71,7 @@ npm install
 
 # Start development server
 npm run dev
-
+```
 
 ## 🧩 Custom Hooks
 
@@ -90,7 +90,7 @@ npm run dev
 ## 📸 Screenshots
 
 ### Component Tree
-![Home Page](./TechBoard.png)
+![al](./TechBoard.png)
 
 ### Products Board
 ![Products Board](./TechBoard.png)
